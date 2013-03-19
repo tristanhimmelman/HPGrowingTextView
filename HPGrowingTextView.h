@@ -78,7 +78,6 @@
 @property BOOL animateHeightChange;
 @property (nonatomic, strong) UITextView *internalTextView;	
 @property (nonatomic, strong) UILabel *placeholderLabel;
-@property (nonatomic, strong) UILabel *trailingLabel;
 
 //uitextview properties
 @property(unsafe_unretained) NSObject<HPGrowingTextViewDelegate> *delegate;

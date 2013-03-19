@@ -85,12 +85,6 @@
     self.placeholderLabel.textColor = [UIColor lightGrayColor];
     [self.internalTextView addSubview:self.placeholderLabel];
     
-    self.trailingLabel = [[UILabel alloc] initWithFrame:r];
-    self.trailingLabel.backgroundColor = [UIColor clearColor];
-    self.trailingLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
-    self.trailingLabel.textColor = [UIColor darkGrayColor];
-    [self.internalTextView addSubview:self.trailingLabel];
-    
     minHeight = internalTextView.frame.size.height;
     minNumberOfLines = 1;
     
@@ -193,16 +187,9 @@
 {
     if (textView.text.length){
         self.placeholderLabel.hidden = YES;
-        self.trailingLabel.hidden = NO;
     } else {
         self.placeholderLabel.hidden = NO;
-        self.trailingLabel.hidden = YES;
     }
-    
-    internalTextView.selectedRange = NSMakeRange([internalTextView.text length], 0);
-    CGPoint cursorPosition = [internalTextView caretRectForPosition:internalTextView.selectedTextRange.start].origin;
-    NSLog(@"position %@", NSStringFromCGPoint(cursorPosition));
-    
     
 	//size of content, so we can set the frame of self
 	NSInteger newSizeH = internalTextView.contentSize.height;
